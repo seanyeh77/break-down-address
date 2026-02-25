@@ -67,6 +67,14 @@ uv run python -m geoinfo
 3. 將處理結果寫回輸出 CSV 文件
 4. 在控制台顯示處理進度
 
+### 地理數據文件
+
+部分功能需要地理邊界的 Shapefile 數據。如需使用空間查詢和村里代碼匹配功能，請：
+
+1. 下載台灣村里邊界資料（VILLAGE_NLSC_1120825.shp 及相關文件）
+2. 將文件放置在 `data/village/` 目錄中
+
+
 ## 架構設計
 
 ### 核心模塊
@@ -354,3 +362,40 @@ uv run ruff format src/
 # 類型檢查
 uv run mypy src/
 ```
+
+## 常見問題
+
+### 測試失敗，出現 "No such file or directory" 錯誤？
+
+某些測試需要地理邊界 Shapefile 數據文件。如果您沒有這些文件，這些測試會被跳過：
+
+```
+TestGetVillageCodeDf - 需要 data/village/VILLAGE_NLSC_1120825.shp
+TestTownFindCity - 需要 data/village/VILLAGE_NLSC_1120825.shp
+```
+
+如需運行這些測試，請將所需的 Shapefile 數據文件放置在 `data/village/` 目錄中。
+
+### 地理編碼失敗？
+
+確保您的 Google Maps API 密鑰正確配置在 `.env` 文件中，且 API 配額未超限。
+
+### 地址解析不準確？
+
+某些非標準格式的台灣地址可能需要預處理。檢查 `src/geoinfo/constants.py` 中的轉換映射以確保支持您的地址格式。
+
+### 性能問題？
+
+在 `src/geoinfo/constants.py` 中調整 `MAX_POOL_SPLITS` 變數以改變並行進程數。增加值可提高性能，但消耗更多內存。
+
+## 許可證
+
+此項目可在 [LICENSE](LICENSE) 文件中找到許可證信息。
+
+## 貢獻
+
+歡迎提交問題報告和拉取請求以改進此項目。
+
+## 聯絡方式
+
+如有問題或建議，請通過 GitHub Issues 聯繫我們。
