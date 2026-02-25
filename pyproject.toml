@@ -1,7 +1,7 @@
 [project]
 name = "break-down-address"
 version = "0.1.0"
-description = "Add your description here"
+description = "A Python package for breaking down and standardizing addresses."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

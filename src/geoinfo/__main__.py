@@ -36,10 +36,10 @@ if __name__ == "__main__":
         # 合併提取後的地址資訊
         if COMBINE:
             _df = break_address_combine(df)
-            _df.to_csv("output/Address_output.csv", index=None)
+            _df.to_csv("output/Address_output.csv", index=False)
 
         # 從合併後的地址資訊使用googleAPI取得經緯度
         if GET_LONLAT:
             df = pd.read_csv("output/Address_output.csv")
             _df = break_address_get_lonlat(df)
-            _df.to_csv("output/Address_output.csv", index=None)
+            _df.to_csv("output/Address_output.csv", index=False)

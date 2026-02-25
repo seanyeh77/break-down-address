@@ -181,7 +181,9 @@ class TestAddrssDataQualify:
 
     def test_credibility_h(self):
         """H: 縣市別 or 第三級行政區 is NaN (garbled data)"""
-        df = self._make_df([{"縣市別": None, "第三級行政區": None, "路": "中山路", "號": "42號"}])
+        df = self._make_df(
+            [{"縣市別": None, "第三級行政區": None, "路": "中山路", "號": "42號"}]
+        )
         result = addrss_data_qualify(df)
         assert result.loc[0, "可信度"] == "H"
 
