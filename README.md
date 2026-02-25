@@ -29,7 +29,6 @@
 
 在開始前，請確保您有：
 - [uv](https://docs.astral.sh/uv/getting-started/installation/) 已安裝。
-- Python 3.12 或更高版本
 - Google Maps API 密鑰（用於地理編碼功能）
 
 ### 安裝
