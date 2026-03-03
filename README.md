@@ -391,11 +391,3 @@ TestTownFindCity - 需要 data/village/VILLAGE_NLSC_1120825.shp
 ## 許可證
 
 此項目可在 [LICENSE](LICENSE) 文件中找到許可證信息。
-
-## 貢獻
-
-歡迎提交問題報告和拉取請求以改進此項目。
-
-## 聯絡方式
-
-如有問題或建議，請通過 GitHub Issues 聯繫我們。
