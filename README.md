@@ -387,7 +387,3 @@ TestTownFindCity - 需要 data/village/VILLAGE_NLSC_1120825.shp
 ### 性能問題？
 
 在 `src/geoinfo/constants.py` 中調整 `MAX_POOL_SPLITS` 變數以改變並行進程數。增加值可提高性能，但消耗更多內存。
-
-## 許可證
-
-此項目可在 [LICENSE](LICENSE) 文件中找到許可證信息。
